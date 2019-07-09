@@ -84,7 +84,46 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+    
+  	  var rotate_element = document.getElementById('rotate-box');
+    var rotate_hammer = new Hammer(rotate_element);
+    rotate_hammer.get('rotate').set({ enable: true });
+    rotate_hammer.on("rotate", function(ev) {
+      $('#rotate-box').css('background-color', 'pink')
+}); 
+    
+ 	  var pinch_element = document.getElementById('pinch-box');
+    var pinch_hammer = new Hammer(pinch_element);
+    pinch_hammer.get('pinch').set({ enable: true });
+    pinch_hammer.on("pinch", function(ev) {
+      $('#pinch-box').css('background-color', 'green')
+}); 
+    
+ 	  var press_element = document.getElementById('press-box');
+    var press_hammer = new Hammer(press_element);
+    press_hammer.on("press", function(ev) {
+      $('#press-box').css('background-color', 'red')
+}); 
+    
+ 	  var pan_element = document.getElementById('pan-box');
+    var pan_hammer = new Hammer(pan_element);
+    pan_hammer.on("pan", function(ev) {
+      $('#pan-box').css('margin-right', '70px')
+});   
+ 
+	  var tap_element = document.getElementById('tap-box');
+    var tap_hammer = new Hammer(tap_element);
+    tap_hammer.on("tap", function(ev) {
+      $('#tap-box').css('background-color', 'yellow')
+});
+    
+    var swipe_element = document.getElementById('swipe-box');
+    var swipe_hammer = new Hammer(swipe_element);
+    swipe_hammer.on("swipe", function(ev) {
+      $('#swipe-box').css('margin-right', '200px')
+});
+    
+
   </script>
 </body>
 </html>
